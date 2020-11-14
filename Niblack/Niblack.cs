@@ -2,11 +2,20 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace Niblack
 {
-    class NiblackAlgorithm
+    class NiblackAlgorithm 
     {
+
+        Niblack_Form frm = new Niblack_Form();
+        
+
+        
+        
+
         static public Bitmap Binarization(Bitmap verifiedImage, float k, int Area)     
         {
             var finalImage = new Bitmap(verifiedImage.Width, verifiedImage.Height, PixelFormat.Format32bppArgb);
@@ -14,13 +23,13 @@ namespace Niblack
             {
                 for (int j = 0; j < verifiedImage.Height; j++)
                 {
-                    finalImage.SetPixel(i, j, NiblackColor(verifiedImage, i, j, k, Area));  
+                    finalImage.SetPixel(i, j, NiblackColor(verifiedImage, i, j, k, Area));
+                    
                 }
             }
 
             return finalImage;
         }
-
 
         private static Color NiblackColor(Bitmap im, int x, int y, float k, int Area)  
         {

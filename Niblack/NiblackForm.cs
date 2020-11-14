@@ -1,11 +1,19 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace Niblack
 {
-    public partial class Niblack_Form : Form
+    public partial class Niblack_Form : Form 
     {
+        public int progresBarData;
+        public int barReturn(int szam)
+        {
+            
+            PoB1.Value = szam;
+            return PoB1.Value;
+        }
 
         public float k = -0.2f;
         public int area  = 4;
@@ -17,7 +25,8 @@ namespace Niblack
             areaBox.Text = area.ToString();
             kBox.Text = k.ToString();
         }
-
+        
+        
 
         private void OpenBut_Click(object sender, EventArgs e)  
         {
@@ -39,9 +48,11 @@ namespace Niblack
                 }
             }
         }
-
+        
         private void codeBut_Click(object sender, EventArgs e)
         {
+           
+           this.PoB1.Value=50;
             try
             {
                 if (kBox.Text == "" || areaBox.Text == "")
@@ -66,5 +77,11 @@ namespace Niblack
         {
 
         }
+
+        private void PoB1_Click(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }
