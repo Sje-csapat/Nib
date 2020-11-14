@@ -1,0 +1,10 @@
+C:\Users\faper\Downloads\Lll\RLE_4810404\RLE\RLE\bin\Debug\RLE.exe.config
+C:\Users\faper\Downloads\Lll\RLE_4810404\RLE\RLE\bin\Debug\RLE.exe
+C:\Users\faper\Downloads\Lll\RLE_4810404\RLE\RLE\bin\Debug\RLE.pdb
+C:\Users\faper\Downloads\Lll\RLE_4810404\RLE\RLE\obj\Debug\Nibleck.Nibleck_Form.resources
+C:\Users\faper\Downloads\Lll\RLE_4810404\RLE\RLE\obj\Debug\RLE.Properties.Resources.resources
+C:\Users\faper\Downloads\Lll\RLE_4810404\RLE\RLE\obj\Debug\Nibleck.csproj.GenerateResource.Cache
+C:\Users\faper\Downloads\Lll\RLE_4810404\RLE\RLE\obj\Debug\Nibleck.csproj.CoreCompileInputs.cache
+C:\Users\faper\Downloads\Lll\RLE_4810404\RLE\RLE\obj\Debug\RLE.exe
+C:\Users\faper\Downloads\Lll\RLE_4810404\RLE\RLE\obj\Debug\RLE.pdb
+C:\Users\faper\Downloads\Lll\RLE_4810404\RLE\RLE\obj\Debug\Nibleck.csprojResolveAssemblyReference.cache

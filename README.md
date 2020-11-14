@@ -1,0 +1,2 @@
+# Niblack's algorithm
+***
