@@ -19,8 +19,6 @@
        
         private void InitializeComponent()
         {
-            
-
             this.label4 = new System.Windows.Forms.Label();
             this.PoB1 = new System.Windows.Forms.ProgressBar();
             this.PB1 = new System.Windows.Forms.PictureBox();
@@ -55,7 +53,6 @@
             this.PoB1.Size = new System.Drawing.Size(143, 20);
             this.PoB1.TabIndex = 7;
             this.PoB1.Click += new System.EventHandler(this.PoB1_Click);
-            
             // 
             // PB1
             // 
@@ -157,6 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(472, 366);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -176,7 +174,7 @@
             this.fLP1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-            
+
         }
 
 

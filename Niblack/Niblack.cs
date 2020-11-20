@@ -5,31 +5,57 @@ using System.Drawing.Imaging;
 using System.Windows.Forms;
 using System.ComponentModel;
 
-namespace Niblack
+
+namespace Niblack 
 {
     class NiblackAlgorithm 
     {
+        //edit 11/16/20
+        
+        static int ProgressValue=100;
+        static public void Setvalami(int x)
+        {
+            ProgressValue = x;
+            
+        }
+        static public int Getvalami()
+        {
+            return ProgressValue;
+        }
 
-        Niblack_Form frm = new Niblack_Form();
-        
+
+        //edit 11/16/20
 
         
-        
+
 
         static public Bitmap Binarization(Bitmap verifiedImage, float k, int Area)     
         {
             var finalImage = new Bitmap(verifiedImage.Width, verifiedImage.Height, PixelFormat.Format32bppArgb);
+            
             for (int i = 0; i < verifiedImage.Width; i++)   
             {
                 for (int j = 0; j < verifiedImage.Height; j++)
                 {
                     finalImage.SetPixel(i, j, NiblackColor(verifiedImage, i, j, k, Area));
+                    if(i==verifiedImage.Width / 2)
+                    {
+                        Setvalami(50);
+                    }
                     
+
+
                 }
             }
+            
 
+            
+            Setvalami(100);
             return finalImage;
         }
+       
+         
+        
 
         private static Color NiblackColor(Bitmap im, int x, int y, float k, int Area)  
         {
@@ -43,14 +69,19 @@ namespace Niblack
             {
                 for (int j = ((y - Area) < 0 ? 0 : y - Area); j < yLen; j++)
                 {
-                    currentSet.Add(im.GetPixel(i, j));                    
+                    //11.17
+                    
+                    //11.17
+                    currentSet.Add(im.GetPixel(i, j));
+                    
                 }
             }
-
+            
 
             float rms = RMS(currentSet); ;
             float average = Average(currentSet);
             int niblackValue = (int)(average + (k * rms));
+            Setvalami(100);
             return (im.GetPixel(x, y).R > niblackValue ? Color.White : Color.Black);
         }
 
@@ -78,4 +109,6 @@ namespace Niblack
             return (float)Math.Sqrt(rms / set.Count);
         }
     }
+    
 }
+
