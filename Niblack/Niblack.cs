@@ -4,6 +4,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.Threading;
+using System.Diagnostics;
 
 
 namespace Niblack 
@@ -11,57 +13,50 @@ namespace Niblack
     class NiblackAlgorithm 
     {
         //edit 11/16/20
-        
-        static int ProgressValue=100;
-        static public void Setvalami(int x)
+       
+        Bitmap verifiedImage;
+        DirectBitmap gyorsitto;
+        public Bitmap SetBitmap(Bitmap gyorsittto)
+        {
+            return gyorsittto;
+        }
+        static int ProgressValue;
+        static public void SetBar(int x)
         {
             ProgressValue = x;
-            
         }
-        static public int Getvalami()
+        static public int GetBar()
         {
             return ProgressValue;
         }
 
-
-        //edit 11/16/20
-
+        //edit 11/16/24 Helyettesiteni a Get Set pixel metodust 
         
-
+            
+        //edit 11/21/24
 
         static public Bitmap Binarization(Bitmap verifiedImage, float k, int Area)     
         {
+            DirectBitmap gyorsitto = new DirectBitmap(verifiedImage.Width, verifiedImage.Height);
+
             var finalImage = new Bitmap(verifiedImage.Width, verifiedImage.Height, PixelFormat.Format32bppArgb);
             
             for (int i = 0; i < verifiedImage.Width; i++)   
             {
                 for (int j = 0; j < verifiedImage.Height; j++)
                 {
-                    finalImage.SetPixel(i, j, NiblackColor(verifiedImage, i, j, k, Area));
-                    if(i==verifiedImage.Width / 2)
-                    {
-                        Setvalami(50);
-                    }
-                    
-
-
+                    gyorsitto.SetPixel(i, j, NiblackColor(verifiedImage, i, j, k, Area));
+                    //finalImage.SetPixel(i, j, NiblackColor(verifiedImage, i, j, k, Area));
                 }
             }
-            
-
-            
-            Setvalami(100);
-            return finalImage;
+            return gyorsitto.Bitmap;
         }
-       
-         
-        
-
-        private static Color NiblackColor(Bitmap im, int x, int y, float k, int Area)  
+        private static Color NiblackColor(Bitmap verifiedImage, int x, int y, float k, int Area)  
         {
+            
 
-            int xLen = ((x + Area) > im.Width ? im.Width : x + Area);
-            int yLen = ((y + Area) > im.Height ? im.Height : y + Area);
+            int xLen = ((x + Area) > verifiedImage.Width ? verifiedImage.Width : x + Area);
+            int yLen = ((y + Area) > verifiedImage.Height ? verifiedImage.Height : y + Area);
 
             List<Color> currentSet = new List<Color>();
 
@@ -69,24 +64,15 @@ namespace Niblack
             {
                 for (int j = ((y - Area) < 0 ? 0 : y - Area); j < yLen; j++)
                 {
-                    //11.17
-                    
-                    //11.17
-                    currentSet.Add(im.GetPixel(i, j));
+                    currentSet.Add(verifiedImage.GetPixel(i, j)); //helyettesiteni 
                     
                 }
             }
-            
-
             float rms = RMS(currentSet); ;
             float average = Average(currentSet);
             int niblackValue = (int)(average + (k * rms));
-            Setvalami(100);
-            return (im.GetPixel(x, y).R > niblackValue ? Color.White : Color.Black);
+            return (verifiedImage.GetPixel(x, y).R > niblackValue ? Color.White : Color.Black);
         }
-
-
-
         private static float Average(List<Color> set)   
         {
             int average = 0;
