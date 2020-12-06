@@ -36,3 +36,13 @@ C:\Users\salma\Desktop\Nib\Niblack\obj\Debug\Niblack.csproj.GenerateResource.cac
 C:\Users\salma\Desktop\Nib\Niblack\obj\Debug\Niblack.csproj.CoreCompileInputs.cache
 C:\Users\salma\Desktop\Nib\Niblack\obj\Debug\Niblack.exe
 C:\Users\salma\Desktop\Nib\Niblack\obj\Debug\Niblack.pdb
+C:\Users\salma\Desktop\Nib_V2\Niblack\bin\Debug\Niblack.exe.config
+C:\Users\salma\Desktop\Nib_V2\Niblack\bin\Debug\Niblack.exe
+C:\Users\salma\Desktop\Nib_V2\Niblack\bin\Debug\Niblack.pdb
+C:\Users\salma\Desktop\Nib_V2\Niblack\obj\Debug\Niblack.csprojAssemblyReference.cache
+C:\Users\salma\Desktop\Nib_V2\Niblack\obj\Debug\Niblack.Niblack_Form.resources
+C:\Users\salma\Desktop\Nib_V2\Niblack\obj\Debug\Niblack.Properties.Resources.resources
+C:\Users\salma\Desktop\Nib_V2\Niblack\obj\Debug\Niblack.csproj.GenerateResource.cache
+C:\Users\salma\Desktop\Nib_V2\Niblack\obj\Debug\Niblack.csproj.CoreCompileInputs.cache
+C:\Users\salma\Desktop\Nib_V2\Niblack\obj\Debug\Niblack.exe
+C:\Users\salma\Desktop\Nib_V2\Niblack\obj\Debug\Niblack.pdb

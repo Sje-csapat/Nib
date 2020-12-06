@@ -2,6 +2,9 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.Threading;
+using System.Diagnostics;
+using System.Threading;
 
 namespace Niblack
 {
@@ -13,19 +16,12 @@ namespace Niblack
             areaBox.Text = area.ToString();
             kBox.Text = k.ToString();
         }
-        //
+        // 11.21.2020
         
         //
-        public float k = -0.2f;
-        public int area  = 4;
+        public float k = 0.1f;
+        public int area  = 2;
         private Bitmap VerifiedImage;
-     
-        
-        public void ChangeProgress(int x)
-        { 
-            
-        }
-
         
         private void OpenBut_Click(object sender, EventArgs e)  
         {
@@ -52,10 +48,10 @@ namespace Niblack
         
         private void codeBut_Click(object sender, EventArgs e)
         {
+           
 
 
-
-            PoB1.Value = NiblackAlgorithm.Getvalami();
+            PoB1.Value = NiblackAlgorithm.GetBar();
 
 
 
@@ -66,22 +62,22 @@ namespace Niblack
 
                 float.TryParse(kBox.Text, out k);
                 Int32.TryParse(areaBox.Text, out area);
-                PoB1.Value = NiblackAlgorithm.Getvalami();
+                PoB1.Value = NiblackAlgorithm.GetBar();
                 Bitmap afterNibleck = NiblackAlgorithm.Binarization(VerifiedImage, k, area);
                 PB1.Image = afterNibleck;
                 PB1.Show();
                 afterNibleck.Save("AfterNiblack.png");
-                Console.Out.WriteLine(NiblackAlgorithm.Getvalami());
-                PoB1.Value = NiblackAlgorithm.Getvalami();
-            }
-          
-            catch (Exception er)
+                Console.Out.WriteLine(NiblackAlgorithm.GetBar());
+            PoB1.Value = NiblackAlgorithm.GetBar();
+             }catch(Exception er)
             {
-                    MessageBox.Show(er.ToString());
-                
+                //messagebox.show(er.tostring());
+                MessageBox.Show(er.Message);
             }
-            Console.Out.WriteLine(NiblackAlgorithm.Getvalami());
-            PoB1.Value = NiblackAlgorithm.Getvalami();
+
+           
+            Console.Out.WriteLine(NiblackAlgorithm.GetBar());
+            PoB1.Value = NiblackAlgorithm.GetBar();
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -93,6 +89,10 @@ namespace Niblack
         {
 
         }
-        
+
+        private void Niblack_Form_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
