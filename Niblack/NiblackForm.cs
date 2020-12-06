@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Threading;
 using System.Diagnostics;
+using System.Threading;
 
 namespace Niblack
 {
@@ -18,8 +19,8 @@ namespace Niblack
         // 11.21.2020
         
         //
-        public float k = -0.2f;
-        public int area  = 4;
+        public float k = 0.1f;
+        public int area  = 2;
         private Bitmap VerifiedImage;
         
         private void OpenBut_Click(object sender, EventArgs e)  
@@ -47,17 +48,17 @@ namespace Niblack
         
         private void codeBut_Click(object sender, EventArgs e)
         {
-
+           
 
 
             PoB1.Value = NiblackAlgorithm.GetBar();
 
 
 
-            //try
-            //{
-              //  if (kBox.Text == "" || areaBox.Text == "")
-                //    throw new Exception("Fields not filled!");
+            try
+            {
+                if (kBox.Text == "" || areaBox.Text == "")
+                    throw new Exception("Fields not filled!");
 
                 float.TryParse(kBox.Text, out k);
                 Int32.TryParse(areaBox.Text, out area);
@@ -67,14 +68,14 @@ namespace Niblack
                 PB1.Show();
                 afterNibleck.Save("AfterNiblack.png");
                 Console.Out.WriteLine(NiblackAlgorithm.GetBar());
-                PoB1.Value = NiblackAlgorithm.GetBar();
-           // }
-          
-         //   catch (Exception er)
-            //{
-              //      MessageBox.Show(er.ToString());
-                
-           // }
+            PoB1.Value = NiblackAlgorithm.GetBar();
+             }catch(Exception er)
+            {
+                //messagebox.show(er.tostring());
+                MessageBox.Show(er.Message);
+            }
+
+           
             Console.Out.WriteLine(NiblackAlgorithm.GetBar());
             PoB1.Value = NiblackAlgorithm.GetBar();
         }
@@ -88,6 +89,10 @@ namespace Niblack
         {
 
         }
-        
+
+        private void Niblack_Form_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

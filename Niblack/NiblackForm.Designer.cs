@@ -170,6 +170,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Niblack_Form";
             this.Text = "Kép feldolgozás (Niblack eljárás)";
+            this.Load += new System.EventHandler(this.Niblack_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PB1)).EndInit();
             this.fLP1.ResumeLayout(false);
             this.ResumeLayout(false);

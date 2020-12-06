@@ -8,6 +8,7 @@ using System.Threading;
 using System.Diagnostics;
 
 
+
 namespace Niblack 
 {
     class NiblackAlgorithm 
