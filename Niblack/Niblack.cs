@@ -15,7 +15,7 @@ namespace Niblack
         //edit 11/16/20
        
         Bitmap verifiedImage;
-        DirectBitmap gyorsitto;
+        static DirectBitmap gyorsitto;
         public Bitmap SetBitmap(Bitmap gyorsittto)
         {
             return gyorsittto;
@@ -37,7 +37,7 @@ namespace Niblack
 
         static public Bitmap Binarization(Bitmap verifiedImage, float k, int Area)     
         {
-            DirectBitmap gyorsitto = new DirectBitmap(verifiedImage.Width, verifiedImage.Height);
+            gyorsitto = new DirectBitmap(verifiedImage.Width, verifiedImage.Height);
 
             var finalImage = new Bitmap(verifiedImage.Width, verifiedImage.Height, PixelFormat.Format32bppArgb);
             
@@ -64,7 +64,7 @@ namespace Niblack
             {
                 for (int j = ((y - Area) < 0 ? 0 : y - Area); j < yLen; j++)
                 {
-                    currentSet.Add(verifiedImage.GetPixel(i, j)); //helyettesiteni 
+                    currentSet.Add(gyorsitto.GetPixel(i, j)); //helyettesiteni 
                     
                 }
             }
