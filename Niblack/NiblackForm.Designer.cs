@@ -49,34 +49,37 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(189, 343);
+            this.label4.Location = new System.Drawing.Point(126, 223);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 20);
+            this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Eredeti";
             // 
             // PoB1
             // 
-            this.PoB1.Location = new System.Drawing.Point(14, 645);
+            this.PoB1.Location = new System.Drawing.Point(9, 419);
+            this.PoB1.Margin = new System.Windows.Forms.Padding(2);
+            this.PoB1.Maximum = 10000;
             this.PoB1.Name = "PoB1";
-            this.PoB1.Size = new System.Drawing.Size(440, 31);
+            this.PoB1.Size = new System.Drawing.Size(293, 20);
             this.PoB1.TabIndex = 7;
-            this.PoB1.Click += new System.EventHandler(this.PoB1_Click);
             // 
             // PB1
             // 
-            this.PB1.Location = new System.Drawing.Point(3, 3);
+            this.PB1.Location = new System.Drawing.Point(2, 2);
+            this.PB1.Margin = new System.Windows.Forms.Padding(2);
             this.PB1.Name = "PB1";
-            this.PB1.Size = new System.Drawing.Size(437, 263);
+            this.PB1.Size = new System.Drawing.Size(291, 171);
             this.PB1.TabIndex = 0;
             this.PB1.TabStop = false;
-            this.PB1.Click += new System.EventHandler(this.PB1_Click);
             // 
             // OpenBut
             // 
-            this.OpenBut.Location = new System.Drawing.Point(12, 434);
+            this.OpenBut.Location = new System.Drawing.Point(8, 282);
+            this.OpenBut.Margin = new System.Windows.Forms.Padding(2);
             this.OpenBut.Name = "OpenBut";
-            this.OpenBut.Size = new System.Drawing.Size(158, 48);
+            this.OpenBut.Size = new System.Drawing.Size(105, 31);
             this.OpenBut.TabIndex = 1;
             this.OpenBut.Text = "Megnyitás";
             this.OpenBut.UseVisualStyleBackColor = true;
@@ -85,48 +88,54 @@
             // fLP1
             // 
             this.fLP1.Controls.Add(this.PB1);
-            this.fLP1.Location = new System.Drawing.Point(14, 15);
+            this.fLP1.Location = new System.Drawing.Point(9, 10);
+            this.fLP1.Margin = new System.Windows.Forms.Padding(2);
             this.fLP1.Name = "fLP1";
-            this.fLP1.Size = new System.Drawing.Size(440, 313);
+            this.fLP1.Size = new System.Drawing.Size(293, 203);
             this.fLP1.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(202, 462);
+            this.label1.Location = new System.Drawing.Point(135, 300);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 20);
+            this.label1.Size = new System.Drawing.Size(16, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "k:";
             // 
             // kBox
             // 
-            this.kBox.Location = new System.Drawing.Point(231, 462);
+            this.kBox.Location = new System.Drawing.Point(154, 300);
+            this.kBox.Margin = new System.Windows.Forms.Padding(2);
             this.kBox.Name = "kBox";
-            this.kBox.Size = new System.Drawing.Size(112, 26);
+            this.kBox.Size = new System.Drawing.Size(76, 20);
             this.kBox.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(177, 502);
+            this.label2.Location = new System.Drawing.Point(118, 326);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 20);
+            this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Area:";
             // 
             // areaBox
             // 
-            this.areaBox.Location = new System.Drawing.Point(231, 502);
+            this.areaBox.Location = new System.Drawing.Point(154, 326);
+            this.areaBox.Margin = new System.Windows.Forms.Padding(2);
             this.areaBox.Name = "areaBox";
-            this.areaBox.Size = new System.Drawing.Size(112, 26);
+            this.areaBox.Size = new System.Drawing.Size(76, 20);
             this.areaBox.TabIndex = 4;
             // 
             // codeBut
             // 
-            this.codeBut.Location = new System.Drawing.Point(11, 493);
+            this.codeBut.Location = new System.Drawing.Point(7, 320);
+            this.codeBut.Margin = new System.Windows.Forms.Padding(2);
             this.codeBut.Name = "codeBut";
-            this.codeBut.Size = new System.Drawing.Size(159, 45);
+            this.codeBut.Size = new System.Drawing.Size(106, 29);
             this.codeBut.TabIndex = 5;
             this.codeBut.Text = "Niblack ";
             this.codeBut.UseVisualStyleBackColor = true;
@@ -135,45 +144,47 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(238, 434);
+            this.label3.Location = new System.Drawing.Point(159, 282);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 20);
+            this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Beállítások:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(177, 679);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(118, 441);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 20);
+            this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Progress:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(535, 15);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(357, 10);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(440, 313);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(293, 203);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.flowLayoutPanel1.SetFlowBreak(this.pictureBox1, true);
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(437, 272);
+            this.pictureBox1.Size = new System.Drawing.Size(291, 177);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(11, 553);
+            this.button1.Location = new System.Drawing.Point(7, 359);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 45);
+            this.button1.Size = new System.Drawing.Size(106, 29);
             this.button1.TabIndex = 9;
             this.button1.Text = "Sobel";
             this.button1.UseVisualStyleBackColor = true;
@@ -182,43 +193,47 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(727, 340);
+            this.label6.Location = new System.Drawing.Point(485, 221);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 20);
+            this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 10;
             this.label6.Text = "Niblack";
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.pictureBox3);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(535, 363);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(357, 236);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(440, 313);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(293, 203);
             this.flowLayoutPanel2.TabIndex = 4;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(437, 272);
+            this.pictureBox3.Size = new System.Drawing.Size(291, 177);
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(727, 693);
+            this.label7.Location = new System.Drawing.Point(485, 450);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 20);
+            this.label7.Size = new System.Drawing.Size(34, 13);
             this.label7.TabIndex = 11;
             this.label7.Text = "Sobel";
             // 
             // Niblack_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.ClientSize = new System.Drawing.Size(1032, 722);
+            this.ClientSize = new System.Drawing.Size(688, 469);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.flowLayoutPanel2);
@@ -235,9 +250,9 @@
             this.Controls.Add(this.OpenBut);
             this.Controls.Add(this.PoB1);
             this.Controls.Add(this.label4);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Niblack_Form";
             this.Text = "Kép feldolgozás (Niblack eljárás)";
-            this.Load += new System.EventHandler(this.Niblack_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PB1)).EndInit();
             this.fLP1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
