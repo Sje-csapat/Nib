@@ -23,94 +23,81 @@ namespace Niblack
             areaBox.Text = area.ToString();
             kBox.Text = k.ToString();
         }
-        // 11.21.2020
-        
-        //
+
+        public Thread t;
+        public Thread d;
         public float k = 0.1f;
-        public int area  = 2;
+        public int area = 2;
         private Bitmap VerifiedImage;
-        
-        
 
-        private void OpenBut_Click(object sender, EventArgs e)  
+        private void OpenBut_Click(object sender, EventArgs e)
         {
-            
-
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())    
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Filter = "Csak képfájlok: (*.bmp, *.jpeg, *.png)|*.bmp;*.jpeg;*.png"; 
+                openFileDialog.Filter = "Csak képfájlok: (*.bmp, *.jpeg, *.png)|*.bmp;*.jpeg;*.png";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK) 
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     VerifiedImage = new Bitmap(openFileDialog.FileName);
-                    
+                    PoB1.Maximum = VerifiedImage.Width;
+                    PoB1.Value = 0;
                     PB1.Size = VerifiedImage.Size;
                     PB1.Image = VerifiedImage;
-
-                    PB1.Show();                                     
-                    fLP1.AutoScroll = true;                        
+                    PB1.Show();
+                    fLP1.AutoScroll = true;
+                    
                 }
             }
         }
-        
+
         private void codeBut_Click(object sender, EventArgs e)
         {
-           
-
-
-            PoB1.Value = NiblackAlgorithm.GetBar();
-
-
-
+            t = new Thread(new ThreadStart(szamitas));
+            d = new Thread(new ThreadStart(frissites));
+            t.Start();
+            d.Start();
+        }
+        ////////////////////////   2020.12.15 - Niblack algoritmus futatása T szálon
+        public void szamitas()
+        {
+            Bitmap afterNibleck = NiblackAlgorithm.Binarization(VerifiedImage, k, area);
+            pictureBox1.Invoke(new MethodInvoker(
+        delegate ()
+        {
+            pictureBox1.Image = afterNibleck;
             try
             {
                 if (kBox.Text == "" || areaBox.Text == "")
                     throw new Exception("Fields not filled!");
-
-                float.TryParse(kBox.Text, out k);
-                Int32.TryParse(areaBox.Text, out area);
-                PoB1.Value = NiblackAlgorithm.GetBar();
-                Bitmap afterNibleck = NiblackAlgorithm.Binarization(VerifiedImage, k, area);
-                pictureBox1.Size = afterNibleck.Size;
-                pictureBox1.Image = afterNibleck;
-                pictureBox1.Show();
-                flowLayoutPanel1.AutoScroll = true;
-                afterNibleck.Save("AfterNiblack.png");
-                Console.Out.WriteLine(NiblackAlgorithm.GetBar());
-            PoB1.Value = NiblackAlgorithm.GetBar();
-             }catch(Exception er)
+                    float.TryParse(kBox.Text, out k);
+                    Int32.TryParse(areaBox.Text, out area);
+                    PoB1.Value = NiblackAlgorithm.GetBar();
+                    pictureBox1.Size = afterNibleck.Size;
+                    pictureBox1.Image = afterNibleck;
+                    pictureBox1.Show();
+                    flowLayoutPanel1.AutoScroll = true;
+                    afterNibleck.Save("AfterNiblack.png");
+            }
+            catch (Exception er)
             {
-                //messagebox.show(er.tostring());
                 MessageBox.Show(er.Message);
             }
-
-           
-            Console.Out.WriteLine(NiblackAlgorithm.GetBar());
+        }));
+        }
+        ////////////////////////   2020.12.15 - Progress bar aktualis érték frissitése D szálon 
+        public void frissites()
+        {
+            do
+            {
+                PoB1.Invoke(new MethodInvoker(
+        delegate ()
+        {
             PoB1.Value = NiblackAlgorithm.GetBar();
+        }));
+                Thread.Sleep(10);
+            } while (true);
         }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PoB1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Niblack_Form_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void PB1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         ////////////////////////   2020.12.06 - Sobel Operator implementálás
 
         //Sobel x-tengely pixel csere kernel

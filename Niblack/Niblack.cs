@@ -15,7 +15,6 @@ namespace Niblack
     {
         //edit 11/16/20
        
-        Bitmap verifiedImage;
         static DirectBitmap gyorsitto;
         public Bitmap SetBitmap(Bitmap gyorsittto)
         {
@@ -25,6 +24,7 @@ namespace Niblack
         static public void SetBar(int x)
         {
             ProgressValue = x;
+            
         }
         static public int GetBar()
         {
@@ -48,19 +48,17 @@ namespace Niblack
                 {
                     gyorsitto.SetPixel(i, j, NiblackColor(verifiedImage, i, j, k, Area));
                     //finalImage.SetPixel(i, j, NiblackColor(verifiedImage, i, j, k, Area));
+                    
                 }
+                SetBar(i);
             }
             return gyorsitto.Bitmap;
         }
         private static Color NiblackColor(Bitmap verifiedImage, int x, int y, float k, int Area)  
         {
-            
-
             int xLen = ((x + Area) > verifiedImage.Width ? verifiedImage.Width : x + Area);
             int yLen = ((y + Area) > verifiedImage.Height ? verifiedImage.Height : y + Area);
-
             List<Color> currentSet = new List<Color>();
-
             for (int i = ((x - Area) < 0 ? 0 : x - Area); i < xLen; i++)  
             {
                 for (int j = ((y - Area) < 0 ? 0 : y - Area); j < yLen; j++)
@@ -77,14 +75,12 @@ namespace Niblack
         private static float Average(List<Color> set)   
         {
             int average = 0;
-
             foreach (var color in set)
             {
                 average += color.R;
             }
             return (average / set.Count);
         }
-
         private static float RMS(List<Color> set)
         {
             float average = Average(set);
