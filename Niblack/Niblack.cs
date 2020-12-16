@@ -32,9 +32,6 @@ namespace Niblack
         }
 
         //edit 11/16/24 Helyettesiteni a Get Set pixel metodust 
-        
-            
-        //edit 11/21/24
 
         static public Bitmap Binarization(Bitmap verifiedImage, float k, int Area)     
         {
@@ -63,8 +60,7 @@ namespace Niblack
             {
                 for (int j = ((y - Area) < 0 ? 0 : y - Area); j < yLen; j++)
                 {
-                    currentSet.Add(gyorsitto.GetPixel(i, j)); //helyettesiteni 
-                    
+                    currentSet.Add(gyorsitto.GetPixel(i, j)); 
                 }
             }
             float rms = RMS(currentSet); ;
