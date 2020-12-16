@@ -26,6 +26,8 @@ namespace Niblack
 
         public Thread t;
         public Thread d;
+        public Thread c;
+       
         public float k = 0.1f;
         public int area = 2;
         private Bitmap VerifiedImage;
@@ -55,12 +57,15 @@ namespace Niblack
         {
             t = new Thread(new ThreadStart(szamitas));
             d = new Thread(new ThreadStart(frissites));
+            c = new Thread(new ThreadStart(reset));
             t.Start();
             d.Start();
         }
         ////////////////////////   2020.12.15 - Niblack algoritmus futatása T szálon
         public void szamitas()
         {
+            c.Start();
+            reset();
             Bitmap afterNibleck = NiblackAlgorithm.Binarization(VerifiedImage, k, area);
             pictureBox1.Invoke(new MethodInvoker(
         delegate ()
@@ -83,6 +88,7 @@ namespace Niblack
             {
                 MessageBox.Show(er.Message);
             }
+
         }));
         }
         ////////////////////////   2020.12.15 - Progress bar aktualis érték frissitése D szálon 
@@ -93,11 +99,23 @@ namespace Niblack
                 PoB1.Invoke(new MethodInvoker(
         delegate ()
         {
+
             PoB1.Value = NiblackAlgorithm.GetBar();
         }));
                 Thread.Sleep(10);
-            } while (true);
+            } while (PoB1.Value <PB1.Width-1);
+            
         }
+        public void reset()
+        {
+            PoB1.Invoke(new MethodInvoker(
+        delegate ()
+        {
+            PoB1.Value = 0;
+            PoB1.Maximum = PB1.Width;
+        }));
+        }
+        
         ////////////////////////   2020.12.06 - Sobel Operator implementálás
 
         //Sobel x-tengely pixel csere kernel
